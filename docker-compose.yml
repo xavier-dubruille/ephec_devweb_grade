@@ -3,7 +3,8 @@ services:
   front:
     image: nginx
     volumes:
-      - ./templates:/etc/nginx/templates
+      - ./nginx_server.conf:/etc/nginx/conf.d/default.conf
+      - ./frontend/dist/frontend:/var/www/front
     ports:
       - "80:80"
     environment:
